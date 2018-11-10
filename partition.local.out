@@ -1,0 +1,72 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+18/11/08 18:45:51 INFO SparkContext: Running Spark version 1.5.2
+18/11/08 18:45:52 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/11/08 18:45:52 INFO SecurityManager: Changing view acls to: ishaan21
+18/11/08 18:45:52 INFO SecurityManager: Changing modify acls to: ishaan21
+18/11/08 18:45:52 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(ishaan21); users with modify permissions: Set(ishaan21)
+18/11/08 18:45:53 INFO Slf4jLogger: Slf4jLogger started
+18/11/08 18:45:53 INFO Remoting: Starting remoting
+18/11/08 18:45:53 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriver@198.202.116.168:46864]
+18/11/08 18:45:53 INFO Utils: Successfully started service 'sparkDriver' on port 46864.
+18/11/08 18:45:53 INFO SparkEnv: Registering MapOutputTracker
+18/11/08 18:45:53 INFO SparkEnv: Registering BlockManagerMaster
+18/11/08 18:45:53 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-fb0df43e-7b8b-43f6-b058-4d60fcc0556f
+18/11/08 18:45:53 INFO MemoryStore: MemoryStore started with capacity 530.0 MB
+18/11/08 18:45:53 INFO HttpFileServer: HTTP File server directory is /tmp/spark-442c2907-f743-449f-946c-a1573ee4424e/httpd-120f6106-b0bc-40d9-ab6b-2c1bfd108e67
+18/11/08 18:45:53 INFO HttpServer: Starting HTTP Server
+18/11/08 18:45:53 INFO Utils: Successfully started service 'HTTP file server' on port 35856.
+18/11/08 18:45:53 INFO SparkEnv: Registering OutputCommitCoordinator
+18/11/08 18:45:53 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+18/11/08 18:45:53 INFO SparkUI: Started SparkUI at http://198.202.116.168:4040
+18/11/08 18:45:53 ERROR SparkContext: Jar not found at file:/home/ishaan21/project5/partition.jar
+18/11/08 18:45:53 WARN MetricsSystem: Using default name DAGScheduler for source because spark.app.id is not set.
+18/11/08 18:45:53 INFO Executor: Starting executor ID driver on host localhost
+18/11/08 18:45:54 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42086.
+18/11/08 18:45:54 INFO NettyBlockTransferService: Server created on 42086
+18/11/08 18:45:54 INFO BlockManagerMaster: Trying to register BlockManager
+18/11/08 18:45:54 INFO BlockManagerMasterEndpoint: Registering block manager localhost:42086 with 530.0 MB RAM, BlockManagerId(driver, localhost, 42086)
+18/11/08 18:45:54 INFO BlockManagerMaster: Registered BlockManager
+18/11/08 18:45:55 INFO MemoryStore: ensureFreeSpace(120040) called with curMem=0, maxMem=555755765
+18/11/08 18:45:55 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 117.2 KB, free 529.9 MB)
+18/11/08 18:45:55 INFO MemoryStore: ensureFreeSpace(12673) called with curMem=120040, maxMem=555755765
+18/11/08 18:45:55 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 12.4 KB, free 529.9 MB)
+18/11/08 18:45:55 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on localhost:42086 (size: 12.4 KB, free: 530.0 MB)
+18/11/08 18:45:55 INFO SparkContext: Created broadcast 0 from textFile at Partition.scala:18
+Exception in thread "main" java.io.IOException: Class not found
+	at com.esotericsoftware.reflectasm.shaded.org.objectweb.asm.ClassReader.a(Unknown Source)
+	at com.esotericsoftware.reflectasm.shaded.org.objectweb.asm.ClassReader.<init>(Unknown Source)
+	at org.apache.spark.util.ClosureCleaner$.getClassReader(ClosureCleaner.scala:40)
+	at org.apache.spark.util.ClosureCleaner$.getInnerClosureClasses(ClosureCleaner.scala:81)
+	at org.apache.spark.util.ClosureCleaner$.org$apache$spark$util$ClosureCleaner$$clean(ClosureCleaner.scala:187)
+	at org.apache.spark.util.ClosureCleaner$.clean(ClosureCleaner.scala:122)
+	at org.apache.spark.SparkContext.clean(SparkContext.scala:2032)
+	at org.apache.spark.rdd.RDD$$anonfun$map$1.apply(RDD.scala:318)
+	at org.apache.spark.rdd.RDD$$anonfun$map$1.apply(RDD.scala:317)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:147)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:108)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:310)
+	at org.apache.spark.rdd.RDD.map(RDD.scala:317)
+	at Partition$.main(Partition.scala:18)
+	at Partition.main(Partition.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.spark.deploy.SparkSubmit$.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:674)
+	at org.apache.spark.deploy.SparkSubmit$.doRunMain$1(SparkSubmit.scala:180)
+	at org.apache.spark.deploy.SparkSubmit$.submit(SparkSubmit.scala:205)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:120)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+18/11/08 18:45:55 INFO SparkContext: Invoking stop() from shutdown hook
+18/11/08 18:45:55 INFO SparkUI: Stopped Spark web UI at http://198.202.116.168:4040
+18/11/08 18:45:55 INFO DAGScheduler: Stopping DAGScheduler
+18/11/08 18:45:55 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+18/11/08 18:45:55 INFO MemoryStore: MemoryStore cleared
+18/11/08 18:45:55 INFO BlockManager: BlockManager stopped
+18/11/08 18:45:55 INFO BlockManagerMaster: BlockManagerMaster stopped
+18/11/08 18:45:55 INFO SparkContext: Successfully stopped SparkContext
+18/11/08 18:45:55 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+18/11/08 18:45:55 INFO ShutdownHookManager: Shutdown hook called
+18/11/08 18:45:55 INFO ShutdownHookManager: Deleting directory /tmp/spark-442c2907-f743-449f-946c-a1573ee4424e
+18/11/08 18:45:55 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+18/11/08 18:45:55 INFO RemoteActorRefProvider$RemotingTerminator: Remote daemon shut down; proceeding with flushing remote transports.
